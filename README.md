@@ -44,7 +44,7 @@
 - **Forms / validation:** react-hook-form, zod
 - **Charts:** recharts
 - **Notifications:** sonner
-- **OCR (optional):** (placeholder) tesseract.js or other OCR integration
+- **OCR:** (placeholder) tesseract.js or other OCR integration
 
 Files of interest
 - Main layout: [src/components/layout/AppLayout.tsx](src/components/layout/AppLayout.tsx)
