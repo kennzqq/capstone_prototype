@@ -2,20 +2,32 @@
 
 **Preview**
 
-<div style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:8px; max-width:900px;">
-	<a href="public/preview1.png">
-		<img src="public/preview1.png" alt="Preview 1" style="width:100%; height:220px; object-fit:cover; border-radius:6px;" />
-	</a>
-	<a href="public/preview2.png">
-		<img src="public/preview2.png" alt="Preview 2" style="width:100%; height:220px; object-fit:cover; border-radius:6px;" />
-	</a>
-	<a href="public/preview3.png">
-		<img src="public/preview3.png" alt="Preview 3" style="width:100%; height:220px; object-fit:cover; border-radius:6px;" />
-	</a>
-	<a href="public/preview4.png">
-		<img src="public/preview4.png" alt="Preview 4" style="width:100%; height:220px; object-fit:cover; border-radius:6px;" />
-	</a>
-</div>
+<table style="width:100%; max-width:900px; border-collapse:collapse;">
+	<tr>
+		<td style="padding:6px; width:50%; vertical-align:top;">
+			<a href="./public/preview1.png">
+				<img src="./public/preview1.png" alt="Preview 1" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
+			</a>
+		</td>
+		<td style="padding:6px; width:50%; vertical-align:top;">
+			<a href="./public/preview2.png">
+				<img src="./public/preview2.png" alt="Preview 2" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:6px; width:50%; vertical-align:top;">
+			<a href="./public/preview3.png">
+				<img src="./public/preview3.png" alt="Preview 3" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
+			</a>
+		</td>
+		<td style="padding:6px; width:50%; vertical-align:top;">
+			<a href="./public/preview4.png">
+				<img src="./public/preview4.png" alt="Preview 4" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
+			</a>
+		</td>
+	</tr>
+</table>
 
 **What it is:** A Web-Based Integrated Facility Reservation and Inventory Management System with optional OCR support — a Capstone project built for Polytechnic University of the Philippines, San Pedro Campus.
 
