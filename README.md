@@ -1,4 +1,4 @@
-![Project Preview](/preview.png)
+![Project Preview](public/preview.png)
 
 # PUP San Pedro — Facility Reservation & Inventory System
 
