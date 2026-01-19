@@ -10,8 +10,8 @@
 			</a>
 		</td>
 		<td style="padding:6px; width:50%; vertical-align:top;">
-			<a href="./public/preview2.png">
-				<img src="./public/preview2.png" alt="Preview 2" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
+			<a href="./public/previeww.png">
+				<img src="./public/previeww.png" alt="Preview 2" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
 			</a>
 		</td>
 	</tr>
