@@ -1,6 +1,7 @@
-![Project Preview](public/preview.png)
+# PUP SPC — Facility Reservation & Inventory System
 
-# PUP San Pedro — Facility Reservation & Inventory System
+**Preview**
+![Project Preview](public/preview.png)
 
 **What it is:** A Web-Based Integrated Facility Reservation and Inventory Management System with optional OCR support — a Capstone project built for Polytechnic University of the Philippines, San Pedro Campus.
 
