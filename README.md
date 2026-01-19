@@ -5,8 +5,8 @@
 <table style="width:100%; max-width:900px; border-collapse:collapse;">
 	<tr>
 		<td style="padding:6px; width:50%; vertical-align:top;">
-			<a href="./public/preview1.png">
-				<img src="./public/preview1.png" alt="Preview 1" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
+			<a href="./public/preview.png">
+				<img src="./public/preview.png" alt="Preview 1" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
 			</a>
 		</td>
 		<td style="padding:6px; width:50%; vertical-align:top;">
