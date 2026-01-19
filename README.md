@@ -1,4 +1,4 @@
-# PUP SPC — Facility Reservation & Inventory System
+# Facility Reservation and Inventory Management System with Optical Character Recognition (OCR) Technology
 
 **Preview**
 ![Project Preview](public/preview.png)
