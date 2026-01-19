@@ -31,7 +31,7 @@
 
 **What it is:** A Web-Based Integrated Facility Reservation and Inventory Management System with optional OCR support — a Capstone project built for Polytechnic University of the Philippines, San Pedro Campus.
 
-**Proposal summary:** This system centralizes facility reservations, automates inventory tracking, and provides reporting to replace manual/paper workflows. It was produced as a capstone collaboration for PUP San Pedro; functional requirements and data will be collected in coordination with campus stakeholders.
+**Proposal summary:** This system centralizes facility reservations, automates inventory tracking, and provides reporting to replace manual/paper workflows.
 
 **Tech stack**
 - **Frontend:** React 18 + TypeScript
