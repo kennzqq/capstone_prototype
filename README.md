@@ -4,7 +4,7 @@ This repository is a Capstone prototype for the Polytechnic University of the Ph
 
 ## Preview
 
-Below are the available preview images from the `public/` folder. Previews 6 and 7 are mobile screenshots.
+Below are the available preview images from the `public/` folder.
 
 <table style="width:100%; max-width:1000px; border-collapse:collapse;">
 	<tr>
@@ -91,5 +91,3 @@ npm run build
 ```bash
 npm run preview
 ```
-
-If you want different screenshots included or different ordering (for example, mark which images are desktop vs mobile), tell me which files to swap and I will update the README accordingly.
