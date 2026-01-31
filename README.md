@@ -1,4 +1,5 @@
-# Facility Reservation and Inventory Management System with OCR Prototype
+# PUP-SP Smart Assets: An Integrated Facility Reservation and Inventory Management System utilizing VLM-Based OCR and Cloud-Integrated Web Architecture
+
 
 This repository is a Capstone prototype for the Polytechnic University of the Philippines, San Pedro Campus. It includes facility reservation flows, inventory management, and a prototype OCR scanner to detect equipment serial numbers from images or camera captures.
 
@@ -53,7 +54,7 @@ Currently the prototype uses `tesseract.js` for client-side OCR. This is adequat
 
 ## Tech stack
 - **Frontend:** React + TypeScript
-- **Dev / Bundler:** Vite
+- **Dev / Bundler:** Vite 
 - **UI:** shadcn/ui (Tailwind + Radix)
 - **Notifications:** sonner
 - **OCR (prototype):** tesseract.js (see notice above)
