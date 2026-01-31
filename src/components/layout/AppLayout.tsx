@@ -20,6 +20,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ProfileDropdown } from "@/components/layout/ProfileDropdown";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -180,9 +181,7 @@ export function AppLayout({ children }: AppLayoutProps) {
             <span className="text-xs text-muted-foreground hidden sm:block">
               Polytechnic University of the Philippines
             </span>
-            <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-              <span className="text-xs font-medium text-muted-foreground">JD</span>
-            </div>
+            <ProfileDropdown />
           </div>
         </header>
 

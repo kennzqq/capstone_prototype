@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Toaster, toast } from "@/components/ui/sonner";
 import { ChevronLeft, ChevronRight, Plus, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -69,6 +70,20 @@ const monthNames = [
 export default function Facilities() {
   const [currentDate, setCurrentDate] = useState(new Date(2026, 0, 19));
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [facilityValue, setFacilityValue] = useState("");
+  const [timeValue, setTimeValue] = useState("");
+    // Handle submit for reservation form
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setIsSheetOpen(false);
+      const form = e.currentTarget as HTMLFormElement;
+      const date = (form.querySelector<HTMLInputElement>("#date")?.value) || "(no date)";
+      const purpose = (form.querySelector<HTMLInputElement>("#purpose")?.value) || "(no purpose)";
+      const requestedBy = (form.querySelector<HTMLInputElement>("#requestedBy")?.value) || "(no requester)";
+      const department = (form.querySelector<HTMLInputElement>("#department")?.value) || "(no department)";
+
+      toast.success("Reservation submitted");
+    };
   
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -88,6 +103,7 @@ export default function Facilities() {
 
   return (
     <div className="space-y-6">
+      <Toaster />
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
@@ -105,10 +121,10 @@ export default function Facilities() {
             <SheetHeader>
               <SheetTitle>Create New Reservation</SheetTitle>
             </SheetHeader>
-            <form className="space-y-4 mt-6">
+            <form className="space-y-4 mt-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label htmlFor="facility">Facility</Label>
-                <Select>
+                <Select value={facilityValue} onValueChange={setFacilityValue}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a facility" />
                   </SelectTrigger>
@@ -128,7 +144,7 @@ export default function Facilities() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="time">Time Slot</Label>
-                  <Select>
+                  <Select value={timeValue} onValueChange={setTimeValue}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
@@ -143,21 +159,24 @@ export default function Facilities() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="purpose">Purpose</Label>
-                <Input id="purpose" placeholder="Enter purpose of reservation" />
+                <Input id="purpose" name="purpose" placeholder="Enter purpose of reservation" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="requestedBy">Requested By</Label>
-                <Input id="requestedBy" placeholder="Name of requester" />
+                <Input id="requestedBy" name="requestedBy" placeholder="Name of requester" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="department">Department</Label>
-                <Input id="department" placeholder="Department or college" />
+                <Input id="department" name="department" placeholder="Department or college" />
               </div>
               <div className="flex justify-end gap-3 pt-4">
                 <Button type="button" variant="ghost" onClick={() => setIsSheetOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit">Submit Request</Button>
+                  <Button type="submit">Submit Request</Button>
+                  <div className="space-y-6">
+                    {/* Removed duplicate Toaster */}
+                  </div>
               </div>
             </form>
           </SheetContent>

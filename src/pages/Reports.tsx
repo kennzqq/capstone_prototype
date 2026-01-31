@@ -1,4 +1,6 @@
 import { FileText, Download, Calendar, BarChart3 } from "lucide-react";
+import { Toaster, toast } from "@/components/ui/sonner";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,8 +21,13 @@ const reportTypes = [
 ];
 
 export default function Reports() {
+  const [reportType, setReportType] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+
   return (
     <div className="space-y-6">
+      <Toaster />
       {/* Header */}
       <div>
         <h2 className="text-lg font-semibold text-foreground">Reports</h2>
@@ -41,7 +48,7 @@ export default function Reports() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="space-y-2">
             <Label htmlFor="reportType">Report Type</Label>
-            <Select>
+            <Select value={reportType} onValueChange={setReportType}>
               <SelectTrigger>
                 <SelectValue placeholder="Select type" />
               </SelectTrigger>
@@ -56,14 +63,16 @@ export default function Reports() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="startDate">Start Date</Label>
-            <Input id="startDate" type="date" />
+            <Input id="startDate" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
           </div>
           <div className="space-y-2">
             <Label htmlFor="endDate">End Date</Label>
-            <Input id="endDate" type="date" />
+            <Input id="endDate" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
           </div>
           <div className="flex items-end">
-            <Button className="w-full gap-2 shadow-sm">
+            <Button className="w-full gap-2 shadow-sm" onClick={() => {
+              toast.success("Report generation started");
+            }}>
               <FileText className="h-4 w-4" />
               Generate Report
             </Button>

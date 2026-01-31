@@ -1,60 +1,72 @@
-# Facility Reservation and Inventory Management System with Optical Character Recognition (OCR) Technology
+# Facility Reservation and Inventory Management System with OCR Prototype
 
-**Preview**
+This repository is a Capstone prototype for the Polytechnic University of the Philippines, San Pedro Campus. It includes facility reservation flows, inventory management, and a prototype OCR scanner to detect equipment serial numbers from images or camera captures.
 
-<table style="width:100%; max-width:900px; border-collapse:collapse;">
+## Preview
+
+Below are the available preview images from the `public/` folder. Previews 6 and 7 are mobile screenshots.
+
+<table style="width:100%; max-width:1000px; border-collapse:collapse;">
 	<tr>
-		<td style="padding:6px; width:50%; vertical-align:top;">
-			<a href="./public/preview.png">
-				<img src="./public/preview.png" alt="Preview 1" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
-			</a>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview1.png"><img src="./public/preview1.png" alt="Preview 1" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
 		</td>
-		<td style="padding:6px; width:50%; vertical-align:top;">
-			<a href="./public/previeww.png">
-				<img src="./public/previeww.png" alt="Preview 2" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
-			</a>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview2.png"><img src="./public/preview2.png" alt="Preview 2" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
+		</td>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview3.png"><img src="./public/preview3.png" alt="Preview 3" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
 		</td>
 	</tr>
 	<tr>
-		<td style="padding:6px; width:50%; vertical-align:top;">
-			<a href="./public/preview3.png">
-				<img src="./public/preview3.png" alt="Preview 3" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
-			</a>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview4.png"><img src="./public/preview4.png" alt="Preview 4" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
 		</td>
-		<td style="padding:6px; width:50%; vertical-align:top;">
-			<a href="./public/preview4.png">
-				<img src="./public/preview4.png" alt="Preview 4" style="width:100%; height:220px; object-fit:cover; border-radius:6px; display:block;" />
-			</a>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview5.png"><img src="./public/preview5.png" alt="Preview 5" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
 		</td>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview6.png"><img src="./public/preview6.png" alt="Preview 6 (mobile)" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:6px; width:33%; vertical-align:top;">
+			<a href="./public/preview7.png"><img src="./public/preview7.png" alt="Preview 7 (mobile)" style="width:100%; height:180px; object-fit:cover; border-radius:6px; display:block;" /></a>
+		</td>
+		<td style="padding:6px; width:33%; vertical-align:top;">&nbsp;</td>
+		<td style="padding:6px; width:33%; vertical-align:top;">&nbsp;</td>
 	</tr>
 </table>
 
-**What it is:** A Web-Based Integrated Facility Reservation and Inventory Management System with optional OCR support — a Capstone project built for Polytechnic University of the Philippines, San Pedro Campus.
+## What changed (Recent updates)
+- Integrated `ProfileDropdown` into the app header and added a sonner toast on sign-out.
+- Improved Dashboard stat dialog UI (icon alignment, subtitle, accessible close behavior) while keeping the stat grid unchanged.
+- Implemented Inventory OCR prototype:
+	- Camera capture and file upload support.
+	- Canvas snapshot -> blob -> OCR pipeline using `tesseract.js` (client-side) for now.
+	- Scanning animation and result card UI with actions (`Scan Again`, `Use This`).
+	- Stops camera when dialog closes and when processing begins.
+	- Sonner toasts for success/failure and a specific "No serial number detected" notification when OCR returns no matches.
 
-**Proposal summary:** This system centralizes facility reservations, automates inventory tracking, and provides reporting to replace manual/paper workflows.
+## OCR Notice
+Currently the prototype uses `tesseract.js` for client-side OCR. This is adequate for offline prototyping but not as accurate or scalable as a cloud OCR service. NOTE: To be changed with DeepSeek (or another cloud OCR provider) for production-grade detection and reliability.
 
-**Tech stack**
-- **Frontend:** React 18 + TypeScript
-- **Bundler / Dev:** Vite
-- **UI:** shadcn/ui (Tailwind CSS + Radix primitives)
-- **Styling:** Tailwind CSS
-- **Icons:** lucide-react
-- **Routing:** react-router-dom
-- **Data fetching / cache:** @tanstack/react-query
-- **Forms / validation:** react-hook-form, zod
-- **Charts:** recharts
+## Tech stack
+- **Frontend:** React + TypeScript
+- **Dev / Bundler:** Vite
+- **UI:** shadcn/ui (Tailwind + Radix)
 - **Notifications:** sonner
-- **OCR:** (placeholder) tesseract.js or other OCR integration
+- **OCR (prototype):** tesseract.js (see notice above)
 
-Files of interest
+## Files of interest
 - Main layout: [src/components/layout/AppLayout.tsx](src/components/layout/AppLayout.tsx)
+- Profile dropdown: [src/components/layout/ProfileDropdown.tsx](src/components/layout/ProfileDropdown.tsx)
+- Inventory + OCR: [src/pages/Inventory.tsx](src/pages/Inventory.tsx)
+- Dashboard dialogs: [src/pages/Dashboard.tsx](src/pages/Dashboard.tsx)
 - UI primitives: [src/components/ui](src/components/ui)
-- Pages: [src/pages](src/pages)
 - Entry point: [src/main.tsx](src/main.tsx)
-- Public assets (logo, preview): add images to the `public/` folder and reference them as `/PUPLogo.png` or `/preview.png`.
 
-Quick setup (Windows / macOS / Linux)
-
+## Quick setup
 1. Prerequisites: Node.js (18+ recommended) and npm
 2. Install dependencies
 
@@ -62,7 +74,7 @@ Quick setup (Windows / macOS / Linux)
 npm install
 ```
 
-3. Start dev server (hot reload)
+3. Start dev server
 
 ```bash
 npm run dev
@@ -79,3 +91,5 @@ npm run build
 ```bash
 npm run preview
 ```
+
+If you want different screenshots included or different ordering (for example, mark which images are desktop vs mobile), tell me which files to swap and I will update the README accordingly.
